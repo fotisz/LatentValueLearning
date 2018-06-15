@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<style>
+
+#animation {
+  position: relative;
+  display: inline-block;
+  width: 660px;
+}
+
+#controls {
+  position: fixed;
+  display: inline-block;
+  width: 300px;
+  padding-top: 120px;
+}
+
+.A-color {
+  fill: #4B90A6;
+}
+
+.B-color {
+  fill: #F3A54A;
+}
+
+</style>
+
+<body>
+
+<div id="animation">
+  <svg width="660" height="500" viewBox="120 50 580 450">
+    <line style="stroke:#000; stroke-width: 0.75; fill: none;" y2="250" y1="250" x2="520" x1="180"></line>
+    <text class="A-color" text-anchor="middle" font-size="12px" y="200" x="350">A elements</text>
+    <text class="B-color" text-anchor="middle" font-size="12px" y="310" x="350">B elements</text>
+  </svg>
+</div>
+<div id="controls">
+  <input id="n_As_visible" size=4 value="10" /><small> A elements visible</small><br>
+  <input id="n_Bs_visible" size=4 value="10" /><small> B elements visible</small><br>
+  <input id="n_As" size=4 value="10" /><small> A elements simulated</small><br>
+  <input id="n_Bs" size=4 value="10" /><small> B elements simulated</small><br>
+  <input id="n_pairs" size=4 value="8" /><small> pairs per iteration</small><br>
+  <br>
+  <input id="show_uncertainty" type="checkbox" /><small> show uncertainty bands</small><br>
+  <input id="show_histogram" type="checkbox" /><small> show histograms</small><br>
+  <br>
+  <input id="sim_speed" type="range" min="0" max="100" value="25"><small> simulation speed</small><br>
+  <br>
+  <button id="animated_learning_restart">restart animation</button>
+</div>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="animated-learning.js"></script>
+
+<script>
+
+animated_learning()
+
+</script>
